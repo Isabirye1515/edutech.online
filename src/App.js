@@ -1,24 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import RegisterAttendanceTable from './components/attendance/registerAttendance';
+import Heading from './components/layout/heading';
+import AttendanceStreamTable from './components/attendance/streamStudentsTable';
+import { Grid } from '@carbon/react';
+import Homeboard from './components/homePage/homeboard';
+import Admin from './components/admin/admin';
+import LibraryInput from './components/library/addBook';
+import EventPage from './components/events/addeventModal';
+import LibraryPage from './components/library/LibraryPage';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Heading />
+    <Grid  style={{marginTop:"3rem"}} >
+      
+        <Routes>
+          <Route path='/' element={<Homeboard />} />
+<Route path='/admin' element={<Admin />} />
+<Route path='/library' element={<LibraryPage />} />
+<Route path='/manageBooks' element={<LibraryInput />} />
+<Route path='/manageEvents' element={<EventPage />} />
+       <Route path='/attendance' element={<AttendanceStreamTable />} />
+      <Route path='/attendance/:id' element={<RegisterAttendanceTable />} />
+    </Routes>
+
+    </Grid>
+  
+
+    </>
+  
   );
 }
 
