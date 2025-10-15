@@ -1,0 +1,14 @@
+<svg hieght="100" width="100"  xmlns="http://www.w3.org/2000/svg"  className='message-item' >
+<path d="M 40 40 40 100" stroke="#fff" />
+<path d="M 80 40 80 100" stroke="#fff" />
+<path d="M 40 40 80 40" stroke="#fff" />
+<path d="M 40 100 80 100" stroke="#fff" />
+<circle cx="60" cy="45" r="5" fill="white" />
+<path d="M 45 60 55 60" stroke="#fff" />
+<path d="M 45 70 55 70" stroke="#fff" />
+<path d="M 45 80 55 80" stroke="#fff" />
+<path d="M 45 90 55 90" stroke="#fff" />
+<path d="M68 58L70 60L75 55 " stroke="white" />
+<path d="M68 68L70 70L75 65 " stroke="white" />
+<path d="M68 78L70 80L75 75 " stroke="white" />
+</svg>

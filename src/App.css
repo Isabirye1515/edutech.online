@@ -1,11 +1,88 @@
 body{
   color: white;
   font-family: 'Times New Roman', Times, serif;
-  background-color:color-mix(in srgb, rgb(220, 233, 220) 50%, rgb(121, 87, 87) 50%);
+ 
+  opacity: 100%;
+  background: color-mix(in srgb, blue 50, black 50%)
   
 }
-.menu{
-  box-shadow: 0.001rem 0.001rem #ddd;
-  background-color: #fff;
-  right: 0;
+.heading{
+  background: pink;
+  
+}
+.sideBar {
+  background-color: #f4f4f4;
+}
+.person-column{
+  text-align: center;
+  margin-top: 20px;
+  border: solid white 1px;
+  background: linear-gradient(135deg, blue 0%, red 100%);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.sideItem {
+  display: block;
+  margin: 4px 0;
+  transition: background-color 0.2s ease;
+  opacity: 100%;
+}
+
+.sideLink {
+  display: block;
+  text-decoration: none;
+  color: #161616;
+  padding: 12px 16px;
+  border-radius: 4px;
+}
+.right-panel {
+  transition: transform 0.3s ease;
+  transform: translateX(100%); /* hidden */
+}
+.right-panel.open {
+  transform: translateX(0); /* visible */
+}
+
+
+.sideLink:hover {
+  background-color: #e0e0e0;
+}
+
+.sideItemContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sideSubGroup {
+  padding-left: 20px;
+  border-left: 2px solid #e0e0e0;
+  margin-left: 10px;
+}
+
+
+
+.homeboard-item{
+  border:1px solid white;
+  border-radius: 10px;
+  margin:10%;
+  background: linear-gradient(135deg, #ddd 0%, slategrey 100%);
+}
+.banner{
+  position:absolute;
+  margin-top:10%;
+  margin-left:40%;
+}
+@media screen and (max-width:500px){
+.banner{
+  position:absolute;
+  margin-top:50%;
+  margin-left:25%;
+}
+.sideBar{
+  visibility: visible;
+  position: absolute;
+  top:"40px"
+}
 }

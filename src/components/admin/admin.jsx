@@ -1,35 +1,46 @@
-import { Column,  Tile } from '@carbon/react';
-import React from 'react';
+import React from "react";
+import {
+  SideNav,
+  SideNavItems,
+  SideNavLink,
+  SideNavItem,
+} from "@carbon/react";
+import { Event, Store, Scale, User, Document, Recycle, PenFountain } from "@carbon/icons-react";
 
-const Admin = () => {
-    const systems = [
-        {id:1, name:"Events" , title:"Manage Events", url:"manageEvents"},
-        {id:1, name:"Library" , title:"Manage Books", url:"manageBooks"},
-        {id:1, name:"Marks" , title:"Manage Marks", url:"manageMarks"},
-        {id:1, name:"Attendance" , title:"Manage Attendance", url:"manageAttendance"},
-    ]
-    return (
-        <>
-        
-        <Column lg={16} md={8} sm={4}>
-        <h2 style={{margin:"10px"}} >OnLine Management</h2>
-        </Column>
+const AdminSideNav = () => {
+  const systems = [
+    { id: 1, title: "Add An Event", actionUrl: "/addEvent",icon:Event },
+    { id: 2, title: "Manage Books", actionUrl: "/manageBooks", icon:Document },
+    { id: 3, title: "Manage Marks", actionUrl: "/manageMarks", icon:PenFountain },
+    { id: 4, title: "Manage Attendance", actionUrl: "/manageAttendance", icon:Recycle },
+  ];
 
-            {systems.map((system)=>(
-                <Column lg={4} md={4} sm={4} key={system.id} style={{margin:"10px"}}   >
-                    <Tile>
-                        <h2>{system.name}</h2>
-                        <h5>{system.title}</h5>
-                        <a href={system.url} >{system.url}</a>
-                    </Tile>
+  return (
+    <div
+      style={{
+        position: "fixed",
+        right: 0,
+        top: 0,
+        height: "100vh",
+        width: "300px",
+        backgroundColor: "#f4f4f4",
+        boxShadow: "-2px 0 8px rgba(0,0,0,0.1)",
+        overflowY: "auto",
+        zIndex: 1000,
+        marginTop:"3rem"
+      }}
+    >
+      <SideNavItems>
+        {systems.map((system) => (
+          <SideNavItem key={system.id}>
+            <SideNavLink href={system.actionUrl} renderIcon={system.icon}>
+              {system.title}
+            </SideNavLink>
+          </SideNavItem>
+        ))}
+      </SideNavItems>
+    </div>
+  );
+};
 
-                </Column>
-            ))}
-            
-
-            
-        </>
-    );
-}
-
-export default Admin;
+export default AdminSideNav;

@@ -1,4 +1,4 @@
-import { Button, Column } from '@carbon/react';
+import { Button, Column, Grid } from '@carbon/react';
 import React, { useEffect, useState } from 'react';
 
 const Events = () => {
@@ -15,11 +15,11 @@ const Events = () => {
   };
 
   useEffect(() => {
-    fetchEvents();
+   
   }, []);
 
   return (
-    <>
+    <Grid style={{marginTop:"3rem"}}>
       {events.map((event) => (
       
           <Column lg={8} md={8} sm={4}  key={event.id} style={{ margin:"5px",padding:"10px",backgroundColor:"#fff", opacity:"100%"}} >
@@ -53,7 +53,7 @@ const Events = () => {
           </Column>
         
       ))}
-    </>
+    </Grid>
   );
 };
 

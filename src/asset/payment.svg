@@ -1,0 +1,8 @@
+<svg hieght="100" width="100"  xmlns="http://www.w3.org/2000/svg"  className='message-item' >
+<path d="M 40 40 40 100" stroke="#fff" />
+
+<circle cx="60" cy="45" r="5" fill="white" />
+
+
+<path d="M68 78L70 80L75 75 " stroke="white" />
+</svg>
